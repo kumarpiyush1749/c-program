@@ -1,0 +1,311 @@
+/*#include<stdio.h>
+main()
+{
+	int n;
+	printf(" enter any no:");
+	scanf("%d",&n);
+	if(n%2==0)
+	 printf("even no");
+	else
+	 printf("odd no"); 
+} 
+#include<stdio.h>
+main()
+{
+	int i,n,fact=1;
+	printf("enter no");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{
+		fact=fact*i;
+	}
+	printf("fact of %d is %d",n,fact);
+}
+#include<stdio.h>
+int factorial (int n);
+main()
+{
+	int n;
+	printf("enter any no:");
+	scanf("%d",&n);
+	printf("factorial of %d is %d",n,factorial(n));
+}
+int factorial(int n)
+{
+	if (n<=1)
+	 return 1;
+	else
+ 	n=n*factorial(n-1);
+ 	return(n) ;
+}
+#include<stdio.h>
+main()
+{
+	int n,i,count=0;
+	printf("enter any no:");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{
+		if(n%i==0)
+		 count++;
+	}
+	if(count==2)
+	{
+		printf("no is prime");
+	}
+	else
+	 printf("not prime");
+}
+#include<stdio.h>
+main()
+{
+	int max_num(int a[],int n);
+	int i,n,max;
+	int a[50];
+	printf("enter n number:");
+	scanf("%d",&n);
+	printf("enter nos:\n");
+	for(i=0;i<n;i++)
+	 scanf("%d",&a[i]);
+	max=max_num(a,n);
+	printf("largest no is %d",max);
+}
+int max_num(int a[],int n)
+{
+	int i,m=0;
+	for(i=0;i<n;i++)
+	{
+		if(a[i]>m)
+		 m=a[i];
+	}
+	return m;
+}
+#include<stdio.h>
+main()
+{
+	int x,y,temp;
+	printf("enter value of x ,y");
+	scanf("%d%d",&x,&y);
+	printf("before swapping x is %d y is %d",x,y);
+	temp=x;
+	x=y;
+	y=temp;
+	printf("after swapping x is %d y is %d",x,y);
+}
+#include<stdio.h>
+main()
+{
+	int a,b;
+	printf("enter value of a and b");
+	scanf("%d%d",&a,&b);
+	printf("before swapping value of a and b is%d %d:",a,b);
+	a=a+b;
+	b=a-b;
+	a=a-b;
+	printf("after swapping value of a and b is %d %d\n",a,b);
+}
+#include<stdio.h>
+main()
+{
+	int a,b,c,i,n;
+	a=0,b=1;
+	printf("enter how many times series generated:");
+	scanf("%d",&n);
+	printf("%d %d ",a,b);
+	for(i=0;i<n;i++)
+	{
+		c=a+b;
+		a=b;
+		b=c;
+		printf("%d\n",c);
+	}
+}
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	char a[100],b[100];
+	printf("enter any string:");
+	gets(a);
+	strcpy(b,a);
+	strrev(b);
+	if(strcmp(a,b)==0)
+	 printf("string is palindrome ");
+	else
+	 printf("not"); 
+}
+#include<stdio.h>
+main()
+{
+	int n,rev=0,original,rem;
+	printf("enter any no:");
+	scanf("%d",&n);
+	original=n;
+	while(n!=0)
+	{
+		rem=n%10;
+		rev=rev*10+rem;
+		n=n/10;
+	}
+	if(original==rev)
+	 printf("palindrome no");
+	else
+	 printf("not"); 
+}
+#include<stdio.h>
+main()
+{
+	int n,original,rem,b=0;
+	printf("enter any no");
+	scanf("%d",&n);
+	original=n;
+	while(n!=0)
+	{
+		rem=n%10;
+		b=b+rem*rem*rem;
+		n=n/10;
+	}
+	if(b==original)
+	 printf("armstrong no");
+	else
+	 printf("not"); 
+}
+#include<stdio.h>
+main()
+{
+	int row,col,n,no,space;
+	printf("enter no of rows:");
+	scanf("%d",&no);
+	for(row=0;row<no;row++)
+	{
+		for(space=0;space<(no-row);space++)
+		{
+			printf(" ");
+		}
+		n=1;
+		for(col=0;col<=row;col++)
+		{
+			printf(" %d",n);
+			n=n*(row-col)/(col+1);
+		}
+		printf("\n");
+	}
+}
+#include<stdio.h>
+main()
+{
+	int y;
+	printf("enter any year:");
+	scanf("%d",&y);
+	if(y % 400==0)
+	 printf("leap");
+	else if(y % 100==0)
+	 printf("not");
+	else if(y % 4==0)
+	 printf("leap");  
+	else
+	 printf("not"); 	
+}
+#include<stdio.h>
+main()
+{
+	int i=1,n,sum=0;
+	printf("enter no");
+	scanf("%d",&n);
+	while(i<n)
+	{
+		if(n%i==0)
+		sum=sum+i;
+		i++;
+		
+	}
+	if(sum==n)
+	 printf("perfect no");
+	else
+	 printf("not"); 
+}
+#include<stdio.h>
+main()
+{
+	int n,i,r,q;
+	int sum=0;
+	int fact=1;
+	printf("enter any no:");
+	scanf("%d",&n);
+	q=n;
+	while(q!=0)
+	{
+		r=q%10;
+		for(i=1;i<=r;i++)
+		{
+			fact=fact*i;
+		}
+		sum=sum+fact;
+		fact=1;
+		q=q/10;
+	}
+	if(n==sum)
+	 printf("strong no");
+	else
+	 printf("not"); 
+}
+#include<stdio.h>
+main()
+{
+	float c,f;
+	printf("enter any no:");
+	scanf("%f",&f);
+       c=((f-32)/9)*5;
+	printf("temp in farenhite is %f",c);
+}
+#include<stdio.h>
+main()
+{
+	int i,p,r,t;
+	printf("enter p,r,t :\n");
+	scanf("%d%d%d",&p,&r,&t);
+    i=(p*r*t)/100;
+    printf("interest is %d",i);
+}
+#include<stdio.h>
+#include<math.h>
+main()
+{
+	int side;
+	float area;
+	printf("enter side");
+	scanf("%d",&side);
+	area=(sqrt(3)/4)*side*side;
+	printf("area of equilateral triangle is %f",area);	
+}
+#include<math.h>
+#include<stdio.h>
+main()
+{
+	int a;
+	float area;
+	printf("enter side :");
+	scanf("%d",&a);
+	area=(sqrt(5*(5+2*sqrt(5)))*a*a)/4;
+	printf("pentagon area is %f",area);
+}
+#include<stdio.h>
+main()
+{
+	printf("hello c");	
+}*/
+#include<stdio.h>
+main()
+{
+	int i;
+	printf("press 0:");
+	scanf("%d",&i);
+	if(i==0)
+	{
+		printf("zero  is pressed");
+	}
+	else
+	{
+		printf("zero is not pressed");
+	}
+}
